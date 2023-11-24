@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use App\Http\Resources\GeneralResponseResource;
 use App\Http\Requests\LoginRequest;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
@@ -28,13 +29,17 @@ class AuthController extends Controller
             }
     
             $user = Auth::user();
-    
+
+            $expirationTime = JWTAuth::setToken($token)->getPayload()->get('exp');
+            $currentTime = now()->timestamp;
+            $expirationMinutes = round(($expirationTime - $currentTime) / 60);
+            
             $response = [
                 "success" => true,
                 "errors" => [],
                 "data"=> [
                     'token' => $token,
-                    'type' => 'bearer'
+                    'minutes_to_expire' => $expirationMinutes
                 ]
             ];
             return new GeneralResponseResource($response);
