@@ -22,6 +22,7 @@ After having this executed we should be able to do requests to the api, in the r
 
 ### Developer Notes:
 Here's a list of the progress based on the requirements and extras features requested on the test, the green ones are the completed and the red ones are the not covered (Due to time not to experience):
+
 Requisitos:
 - Utilizar Laravel 9 o 10, BBDD MySQL 🟩
 - JWT para el token 🟩
