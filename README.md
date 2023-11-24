@@ -8,7 +8,10 @@
 </p>
 
 ## Execution
-To run the project and create migrations, fake data, we need to run the following commands:
+First, we need to create the .env file, for this we can create the file and copy + paste the content
+of the .env.example file.
+
+Then, to run the project and create migrations, fake data, we need to run the following commands:
 ```
 composer install
          &
