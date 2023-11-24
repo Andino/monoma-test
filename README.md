@@ -29,6 +29,7 @@ Requisitos:
 - Crear factories de todos los modelos 🟩
 - Seeder para crear usuario con los 2 roles 🟩
 - Buenas prácticas de programación en base al estándar de la comunidad de Laravel 🟩 (Bajo PSR2 y demas)
+
 Extra
 - Utilizar caché para obtener los candidatos 🟥
 - Implementar patrón repository 🟩
